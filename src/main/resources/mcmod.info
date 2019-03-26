@@ -1,0 +1,16 @@
+[
+{
+  "modid": "hacttweaker",
+  "name": "Heat&Climate Tweaker",
+  "description": "Mod interactions of CraftTweaker2 and Heat&Climate.",
+  "version": "1.0.0",
+  "mcversion": "1.12",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Ib"],
+  "credits": "DefeatedCrow, the author of Heat&Climate, and Jared, the author of CraftTweaker2.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
