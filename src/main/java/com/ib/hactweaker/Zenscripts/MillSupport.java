@@ -10,11 +10,8 @@ import defeatedcrow.hac.core.climate.recipe.MillRecipe;
 import net.minecraft.item.ItemStack;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
-import stanhebben.zenscript.value.IAny;
 
 import java.util.Arrays;
-
-import static com.ib.hactweaker.HACTweaker.logger;
 
 @ZenClass("mods.hac.Mill")
 @ZenRegister
@@ -24,6 +21,11 @@ public final class MillSupport {
     public static void addRecipe(IIngredient input, IItemStack output1, IItemStack output2, float c2){
         MillAction newrecipe = new MillAction(input, output1, output2, c2);
         newrecipe.apply();
+    }
+
+    @ZenMethod
+    public static void removeRecipe(IItemStack input){
+        RecipeAPI.registerMills.removeRecipe(CraftTweakerMC.getItemStack(input));
     }
 
     private static final class MillAction implements IAction{
@@ -41,7 +43,7 @@ public final class MillSupport {
 
         @Override
         public void apply() {
-            MillRecipe recipe = new MillRecipe(output1, output1, c2, Arrays.asList(input));
+            MillRecipe recipe = new MillRecipe(output1, output2, c2, Arrays.asList(input));
             RecipeAPI.registerMills.addRecipe(recipe);
         }
 

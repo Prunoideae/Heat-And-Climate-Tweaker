@@ -6,13 +6,12 @@ import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.liquid.ILiquidStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
+import defeatedcrow.hac.api.recipe.RecipeAPI;
+import defeatedcrow.hac.core.climate.recipe.CrusherRecipe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraftforge.fluids.FluidStack;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
-import defeatedcrow.hac.core.climate.recipe.CrusherRecipe;
-import defeatedcrow.hac.api.recipe.RecipeAPI;
 
 import java.util.Arrays;
 
@@ -25,6 +24,11 @@ public final class CrusherSupport {
         CrusherAction newrecipe = new CrusherAction(input, output1, output2, output3, c1, c2, c3, cata, fluid);
         newrecipe.apply();
 
+    }
+
+    @ZenMethod
+    public static void removeRecipe(IItemStack input, IItemStack mold){
+        RecipeAPI.registerCrushers.removeRecipe(CraftTweakerMC.getItemStack(input), CraftTweakerMC.getItemStack(mold));
     }
 
     private static final class CrusherAction implements IAction{

@@ -22,6 +22,11 @@ public final class SpinningSupport {
         newrecipe.apply();
     }
 
+    @ZenMethod
+    public static void removeRecipe(IItemStack input){
+        RecipeAPI.registerSpinningRecipes.removeRecipe(CraftTweakerMC.getItemStack(input));
+    }
+
     private static final class SpinAction implements IAction{
         private final ItemStack[] input;
         private final int count;

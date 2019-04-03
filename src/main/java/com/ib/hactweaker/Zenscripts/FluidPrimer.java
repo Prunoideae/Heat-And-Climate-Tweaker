@@ -1,6 +1,5 @@
 package com.ib.hactweaker.Zenscripts;
 
-import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.liquid.ILiquidStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
@@ -10,9 +9,7 @@ import defeatedcrow.hac.api.climate.DCHumidity;
 import defeatedcrow.hac.api.recipe.RecipeAPI;
 import defeatedcrow.hac.core.climate.recipe.FluidCraftRecipe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraftforge.fluids.FluidStack;
-import scala.actors.threadpool.Arrays;
 import stanhebben.zenscript.annotations.ZenMethod;
 
 import java.util.ArrayList;
@@ -84,6 +81,7 @@ public class FluidPrimer {
         FluidCraftRecipe recipe = new FluidCraftRecipe(output, second, fluidOutput, null, null, null, chance,cooling, fluidInput, inputs.toArray());
         if (!heatTier.isEmpty()){
             for (DCHeatTier h : heatTier){
+
                 recipe.requiredHeat().add(h);
             }
         }
