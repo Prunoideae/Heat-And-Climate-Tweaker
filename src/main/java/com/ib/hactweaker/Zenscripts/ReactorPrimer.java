@@ -8,7 +8,7 @@ import defeatedcrow.hac.api.recipe.RecipeAPI;
 import defeatedcrow.hac.core.climate.recipe.ReactorRecipe;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import scala.actors.threadpool.Arrays;
+import java.util.Arrays;
 import stanhebben.zenscript.annotations.ZenMethod;
 
 import java.util.ArrayList;
